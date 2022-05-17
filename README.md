@@ -4,8 +4,8 @@ DataSets:
 2: Insect Carnivore 
 
 Authors:
-Mobeen Farhan
-Estaphanos Jebessa
+Mobeen Farhan,
+Estaphanos Jebessa,
 Muhammad Moeez Imdad
 
 Description:  
