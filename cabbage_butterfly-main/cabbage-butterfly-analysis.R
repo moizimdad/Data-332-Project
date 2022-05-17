@@ -12,7 +12,7 @@ library(maps)
 library(usmap)
 
 rm(list = ls())
-setwd("C:/Users/estif/OneDrive/Documents/Data 332 Project/cabbage_butterfly-main/data")
+setwd("~/R Projects/Data-332-Project/cabbage_butterfly-main/data")
 
 ## Importing the clean and raw datasets
 df_clean <- read_excel("Cleaned Data LWA .xlsx") %>%
@@ -188,6 +188,8 @@ country_plot
 # paired sample t-test for apex area and sex
 apex_area_t_test = t.test(df_1$AverageApexArea ~ df_1$sex,data = df_1, var.equal = TRUE)
 apex_area_t_test
-wing_length_t_test = t.test  
 
+#paired sample t-test for wing length and sex
+wing_length_t_test = t.test(df_1$AverageWingLength ~ df_1$sex, data = df_1, var.equal = TRUE)
+wing_length_t_test
 

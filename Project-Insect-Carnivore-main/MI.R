@@ -7,8 +7,8 @@ library(tidytext)
 library(hrbrthemes)
 library(viridis)
 
-
-setwd("C:/Users/estif/OneDrive/Documents/Data 332 Project/Project-Insect-Carnivore-main/data")
+rm(list = ls())
+setwd("~/R Projects/Data-332-Project/Project-Insect-Carnivore-main/data")
 df <- read_excel ("Ladybug Data.xlsx", sheet = 1)
 df2 <- read.csv("Scan Ladybug Data.csv")
 
