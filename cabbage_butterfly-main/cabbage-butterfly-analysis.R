@@ -80,7 +80,7 @@ wing_length_plot = df_1 %>%
                vjust = 1.5, hjust = 1,  x.label.fmt = "%Y")
 
 
-
+#scatter plot of average wing width over decades grouped by sex
 wing_width_plot = df_1 %>%
   ggplot(aes(x = Date, y = AverageWingWidth, color = sex)) +
   geom_point() +
@@ -99,6 +99,9 @@ wing_width_plot = df_1 %>%
   # stat_valleys(geom = "text", colour = "blue", angle = 45,
   #              vjust = 1.5, hjust = -1,  x.label.fmt = "%Y")
 
+
+
+#bar plot for average apex area over decades grouped by sex
 apex_area_plot = df_1 %>%
   ggplot(aes(x = Date, y = AverageApexArea, color = sex, fill = sex)) +
   geom_bar(stat = "identity", position = "dodge")+ theme_minimal()+
@@ -116,7 +119,8 @@ combined_plot = ggarrange(wing_length_plot, wing_width_plot, apex_area_plot,
 combined_plot
 
 
-## Plot for mapping 
+
+## Plot for mapping insects collected around the world
 world <- map_data("world")
 world_plot = ggplot() +
   geom_map(
@@ -134,7 +138,8 @@ world_plot = ggplot() +
   labs(title="Insect Locations")
 
 
-##  USA plot
+
+##  USA map plot by state
 df_usa = df_1 %>%
   dplyr::filter(Country == "United States")
 
@@ -156,6 +161,8 @@ usa_plot = ggplot() +
  
 ggarrange(world_plot, usa_plot,
           ncol = 1, nrow = 2) 
+
+
 
 ## Wing Length, Wing Width, Apex Area, and Anterior Spot Area by Country
 InsectMeasurments = c(df_1$AverageWingLength, df_1$AverageWingWidth, df_1$AverageApexArea, df_1$AverageAnteriorSpotA)
